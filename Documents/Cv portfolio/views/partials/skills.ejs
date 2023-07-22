@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+
+  <!-- Link to your CSS files -->
+  <link rel="stylesheet" href="/Public/style.css">
+  <link rel="stylesheet" href="/Public/mediaqueries.css">
+
+  <!-- Add your CSS styling for the "about" section -->
+</head>
+
+
+
+
+<body>
+    <h2>Skills</h2>
+    <ul>
+      <% skills.forEach((skill) => { %>
+        <li>
+          Skill Type: <%= skill.type %><br>
+          Skills:
+          <ul>
+            <% skill.skills.forEach((singleSkill) => { %>
+              <li><%= singleSkill %></li>
+            <% }); %>
+          </ul>
+        </li>
+      <% }); %>
+    </ul>
+
+
+  
+<!--<section id="experience">
+    <-- Add your Skills section HTML here
+</section>  -->
+</body>

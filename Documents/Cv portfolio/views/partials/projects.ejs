@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ... Other head content ... -->
+  <!-- Link to your CSS files -->
+  <link rel="stylesheet" href="/Public/style.css">
+  <link rel="stylesheet" href="/Public/mediaqueries.css">
+
+  <!-- Add your CSS styling for the "about" section -->
+
+  <!-- Add JavaScript code for fetching skills data -->
+  <script>
+    document.addEventListener('DOMContentLoaded', fetchSkillsData);
+
+    async function fetchSkillsData() {
+      try {
+        const response = await fetch('http://your-backend-url/api/skills');
+        const skillsData = await response.json();
+        displaySkills(skillsData);
+      } catch (error) {
+        console.error('Error fetching skills data:', error);
+      }
+    }
+
+    function displaySkills(skillsData) {
+      const skillsList = document.querySelector('ul');
+      skillsData.forEach(skill => {
+        const skillElement = `
+          <li>
+            Skill Type: ${skill.type}<br>
+            Skills:
+            <ul>
+              ${skill.skills.map(singleSkill => `<li>${singleSkill}</li>`).join('')}
+            </ul>
+          </li>
+        `;
+        skillsList.innerHTML += skillElement;
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Skills</h2>
+  <ul>
+    <!-- Skills data will be dynamically added here -->
+  </ul>
+</body>
+</html>
