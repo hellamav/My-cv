@@ -403,7 +403,7 @@ section{
 
 #cloud {
   position: relative;
-  margin-top: -35rem; /* You can adjust this value as needed to move the section upwards */
+  margin-top: -30rem; /* You can adjust this value as needed to move the section upwards */
 }
 
 .cloud-sub-title {
